@@ -1,0 +1,55 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://png.pngtree.com/png-clipart/20190118/ourlarge/pngtree-lottery-seeking-hand-painted-hand-drawn-lottery-png-image_455275.jpg",
+        "aspectMode": "cover",
+        "size": "full"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "text": "幫我選",
+              "label": "隨機指定"
+            },
+            "style": "primary",
+            "color": "#02c874"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.pinimg.com/736x/2e/81/14/2e8114234eee620ed55d79bf8557be73.jpg",
+        "aspectMode": "cover",
+        "size": "full"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "轉盤",
+              "uri": "https://liff.line.me/2000676365-Z719DQjk"
+            },
+            "style": "primary",
+            "color": "#02c874"
+          }
+        ]
+      }
+    }
+  ]
+}

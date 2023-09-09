@@ -1,0 +1,53 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://www.birdcp.com.tw/wp-content/uploads/2018/05/2018-05-16_160100.png",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "外送連結",
+              "uri": "https://liff.line.me/2000676365-43klVbEO"
+            },
+            "style": "secondary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://logodownload.org/wp-content/uploads/2019/05/uber-eats-logo-1.png",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "外送連結",
+              "uri": "https://liff.line.me/2000676365-QRJ41xbB"
+            },
+            "style": "secondary"
+          }
+        ]
+      }
+    }
+  ]
+}
