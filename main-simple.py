@@ -8,8 +8,9 @@ Created on Wed Sep  6 09:58:19 2023
 import json
 import random
 import csv
-from flask import Flask
+from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
+from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, FlexSendMessage, TextMessage, LocationMessage, TextSendMessage, QuickReplyButton, QuickReply, LocationAction, PostbackEvent
 
 
@@ -181,9 +182,16 @@ def fixed_position(latitude, longitude):
 with open('random.txt', 'r', encoding='utf-8') as file:
     options = [line.strip() for line in file.readlines()]
 
-@app.route("/")
-def hello_world():
-    return 'Hello, World!'
+@app.route("/callback", methods=['POST'])
+def callback():
+    signature = request.headers['X-Line-Signature']
+    body = request.get_data(as_text=True)
+    app.logger.info("Request body: " + body)
+    try:
+        handler.handle(body, signature)
+    except InvalidSignatureError:
+        abort(400)
+    return 'OK'
 @handler.add(PostbackEvent)
 def handle_postback_message(event):
     if event.postback.data == "位置定位":
@@ -215,5 +223,7 @@ def handle_text_message(event):
     elif user_message == "外送平台":
         FlexMessage = json.load(open('fooddelivery.json','r',encoding='utf-8'))
         line_bot_api.reply_message(event.reply_token, FlexSendMessage('外送平台選項', FlexMessage))
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
 
 
